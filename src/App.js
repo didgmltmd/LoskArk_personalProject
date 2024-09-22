@@ -1,25 +1,76 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{ useState } from 'react';
+import styled from 'styled-components';
+import { CharacterData } from './CharacterData';
+import lostarkLogo from './img/lostarkLogo.png'
+import CharacterInterface from './CharacterInterface';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+export default function App(){
+  return(
+    <Container>
+      <SideMenu>
+        <LostArkImg src={lostarkLogo} />
+        <CharacterData></CharacterData>
+      </SideMenu>
+      <Mainbody>
+        <RightHeader>
+          <CharacterInterface></CharacterInterface>
+        </RightHeader>
+        <RightFooter>
+
+        </RightFooter>
+      </Mainbody>
+    </Container>
   );
 }
 
-export default App;
+const Container = styled.div`
+  width:1690px;
+  height:900px;
+
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+`
+const LostArkImg = styled.img`
+  widht:300px;
+  height:100px;
+  margin-bottom:10px;
+
+`
+
+const SideMenu = styled.div`
+  width:300px;
+  height:900px;
+  background-color:lightgray;
+  display:flex;
+  flex-direction:column;
+`
+
+
+const Mainbody = styled.div`
+  width:1390px;
+  display:flex;
+  flex-direction:column;
+`
+
+const RightHeader = styled.div`
+  width:1390px;
+  height:600px;
+  border: 1px solid black;
+
+`
+
+const RightFooter = styled.div`
+  width:1390px;
+  height:300px;
+  border:1px solid black;
+`
+
+const MenuContainer = styled.div`
+
+`
+
+const CharacterInfo = styled.div`
+  
+`
