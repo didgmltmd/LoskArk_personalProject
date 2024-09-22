@@ -1,6 +1,8 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import { searchCharacterName, searchedCharacterList } from "./recoilState";
+import { useRecoilState } from "recoil";
 
 
 async function searchCharacter(name) {
@@ -14,9 +16,6 @@ async function searchCharacter(name) {
 
         const response = await axios.get(`${URL}/characters/${name}/siblings`, {headers});
 
-
-
-
         return response.data;
     }catch(error){
         console.error(error);
@@ -26,8 +25,9 @@ async function searchCharacter(name) {
 
 export function CharacterData() {
     const [searchName,setSearchName] = useState("");
-    const [finalName,setfinalName] = useState("아브까지");
-    const userList = [];
+    const [finalName,setfinalName] = useRecoilState(searchCharacterName);
+    const isMounted = useRef(false);
+
     let characterArr = [];
     const activeEnter = (e) => {
         if(e.key === "Enter"){
@@ -36,17 +36,18 @@ export function CharacterData() {
         }
     }
     
+    const [characterList,setcharacterList] = useRecoilState(searchedCharacterList);
     useEffect(() => {
-        async function fetch() {
-            const  characterData = await searchCharacter(finalName);
-            for(let i = 0;i<characterData.length;i++){
-                let  itemMaxLevel = parseInt(characterData[i].ItemMaxLevel.replace(/,/g,''));
-                if(itemMaxLevel >  1639.9){
-                    characterArr.push(characterData[i]);
-                }
-            }
-        };
-        fetch();
+        if(isMounted.current) {
+
+            async function fetch() {
+                const  characterData = await searchCharacter(finalName);
+                setcharacterList(characterData);
+            };
+            fetch();
+        }else{
+            isMounted.current=true;
+        }
     },[finalName])
 
 
