@@ -17,7 +17,7 @@ export default function App(){
           <CharacterInterface></CharacterInterface>
         </RightHeader>
         <RightFooter>
-
+          
         </RightFooter>
       </Mainbody>
     </Container>
