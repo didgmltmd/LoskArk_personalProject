@@ -33,8 +33,8 @@ import soul from './img/job/soul.png'
 import strike from './img/job/strike.png'
 
 
-
-function setCharacterClassLogo(className){
+//각 클래스에 맞는  사진 src를 리턴
+export function setCharacterClassLogo(className){
     if(className =="소울이터") return soul
     else if(className =="아르카나") return alks
     else if(className =="바드") return bard

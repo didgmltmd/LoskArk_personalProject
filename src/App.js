@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { CharacterData } from './CharacterData';
 import lostarkLogo from './img/lostarkLogo.png'
 import CharacterInterface from './CharacterInterface';
+import CharacterFullInterface from './CharacterFullInterface';
 
 
 export default function App(){
@@ -14,10 +15,10 @@ export default function App(){
       </SideMenu>
       <Mainbody>
         <RightHeader>
-          <CharacterInterface></CharacterInterface>
+          <CharacterInterface />
         </RightHeader>
         <RightFooter>
-          
+          <CharacterFullInterface />
         </RightFooter>
       </Mainbody>
     </Container>

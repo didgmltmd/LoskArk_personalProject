@@ -27,3 +27,13 @@ export const searchedFourTCharacterList = atom({
     key:'searchedFourTCharacterList',
     default:[],
 });
+
+export const characterDisplayList = atom({
+    key:'characterDisplayList',
+    default:[],
+})
+
+export const characterFullInfo = atom({
+    key:'characterFullInfo',
+    default:"아브까지"
+})
