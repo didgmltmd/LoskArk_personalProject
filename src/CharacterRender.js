@@ -85,10 +85,6 @@ export default function CharacterRender(){
                             레벨:{it.characterLevel}
                         </CharacterLevel>
                     </CharacterInfo>
-                    <CharacterRaid>
-                        
-                    </CharacterRaid>
-                    <DivCharacterInfo idx = {it.id} />
                 </CharacterConatiner>
             ))}
         </DisplayContainer>
@@ -139,17 +135,3 @@ const CharacterLevel = styled.div`
 
 `
 
-
-const CharacterRaid = styled.div`
-
-`
-
-const Behimos = styled.input`
-
-`
-const Kamen = styled.input`
-
-`
-
-const Ekid = styled.input`
-`

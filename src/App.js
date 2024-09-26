@@ -4,7 +4,7 @@ import { CharacterData } from './CharacterData';
 import lostarkLogo from './img/lostarkLogo.png'
 import CharacterInterface from './CharacterInterface';
 import CharacterFullInterface from './CharacterFullInterface';
-
+import SelectedCharacterList from './SelectedCharacterList'
 
 export default function App(){
   return(
@@ -12,6 +12,7 @@ export default function App(){
       <SideMenu>
         <LostArkImg src={lostarkLogo} />
         <CharacterData></CharacterData>
+        <SelectedCharacterList />
       </SideMenu>
       <Mainbody>
         <RightHeader>
@@ -27,7 +28,7 @@ export default function App(){
 
 const Container = styled.div`
   width:1690px;
-  height:900px;
+  height:850px;
 
   display:flex;
   flex-direction:row;
@@ -42,7 +43,7 @@ const LostArkImg = styled.img`
 
 const SideMenu = styled.div`
   width:300px;
-  height:900px;
+  height:853px;
   background-color:lightgray;
   display:flex;
   flex-direction:column;
@@ -51,6 +52,7 @@ const SideMenu = styled.div`
 
 const Mainbody = styled.div`
   width:1390px;
+  height:600px;
   display:flex;
   flex-direction:column;
 `
@@ -64,7 +66,7 @@ const RightHeader = styled.div`
 
 const RightFooter = styled.div`
   width:1390px;
-  height:300px;
+  height:350px;
   border:1px solid black;
 `
 

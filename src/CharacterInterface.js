@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { searchedCharacterList } from "./recoilState";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { searchCharacterName } from "./recoilState";
 import { useEffect, useRef, useState } from "react";
 import CharacterRender from "./CharacterRender";
@@ -88,11 +88,14 @@ export default function CharacterInterface() {
                         characterName: characterList[i].CharacterName,
                         characterClassName: characterList[i].CharacterClassName,
                         characterLevel: characterList[i].ItemMaxLevel,
-                        characterLogo: characterLogo
+                        characterLogo: characterLogo,
+                        characterKamen: true,
+                        characterBehimos: true,
+                        characterEkidena: true
                     }
                     idx++;
-
-
+                    
+                    
                     //만든 데이터객체를 배열에 저장
                     characterBlock.push(characterInfo);
                 }
